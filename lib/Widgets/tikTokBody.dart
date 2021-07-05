@@ -11,6 +11,11 @@ class UITikTok extends StatelessWidget {
           height: double.infinity,
         ),
         _blackGradient(),
+        Column(
+          children: [
+            _topNav(),
+          ],
+        ),
       ],
     );
   }
@@ -31,6 +36,35 @@ class UITikTok extends StatelessWidget {
             Colors.black54,
             Colors.black87,
           ])),
+    );
+  }
+
+  Widget _topNav() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          _topItem("Siguiendo", Colors.white),
+          SizedBox(width: 30.0),
+          _topItem("Para tí", Colors.white54),
+        ],
+      ),
+    );
+  }
+
+  Widget _topItem(String title, Color color) {
+    return Column(
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+              fontSize: 18.0, color: color, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 8.0,
+        ),
+      ],
     );
   }
 }

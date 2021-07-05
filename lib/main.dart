@@ -12,7 +12,7 @@ class PantallaPrincipal extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: UITikTok(),
+        body: SafeArea(child: UITikTok()),
         bottomNavigationBar: _bottomNav(),
       ),
     );
