@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'Widgets/tikTokBody.dart';
 
@@ -12,7 +13,14 @@ class PantallaPrincipal extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: SafeArea(child: UITikTok()),
+        body: Container(
+          // Hacemos wrapp del safeArea con Container
+          // Para "cambiar" el color del statusbar
+          color: Colors.black,
+          child: SafeArea(
+            child: UITikTok(),
+          ),
+        ),
         bottomNavigationBar: _bottomNav(),
       ),
     );

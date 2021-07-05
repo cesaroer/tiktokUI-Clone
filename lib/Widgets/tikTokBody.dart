@@ -12,9 +12,15 @@ class UITikTok extends StatelessWidget {
         ),
         _blackGradient(),
         Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _topNav(),
-            _interactionButtons(),
+            Column(
+              children: [
+                _interactionButtons(),
+                _postData(),
+              ],
+            ),
           ],
         ),
       ],
@@ -99,6 +105,78 @@ class UITikTok extends StatelessWidget {
           Image.asset("icons/compartir.png"),
           SizedBox(height: 5.0),
           Text("14", style: TextStyle(fontSize: 10.0, color: Colors.white)),
+        ],
+      ),
+    );
+  }
+
+  Widget _postData() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 15.0, right: 8.0, bottom: 10.0),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                "@nungs_kuirs",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(width: 10.0),
+              Text(
+                "03-05",
+                style: TextStyle(
+                    color: Colors.white54, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          SizedBox(height: 15.0),
+          Row(
+            children: [
+              // Flexible es para que el texto no se haga overflow
+              Flexible(
+                child: Column(
+                  children: [
+                    Text(
+                      'MENCIONADME EN AUDIOS QUE QUERÁIS QUE HAGA, PORFA!!',
+                      style: TextStyle(color: Colors.white),
+                      overflow: TextOverflow.clip,
+                    ),
+                    SizedBox(height: 10.0),
+                    Row(
+                      children: [
+                        Image.asset("icons/musica.png", width: 20.0),
+                        SizedBox(width: 10.0),
+                        Text(
+                          "rolera -Dana",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        SizedBox(width: 20.0),
+                        Text(
+                          "sonido original",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(color: Colors.white24, width: 10.0),
+                ),
+                child: ClipOval(
+                    child: Image.network(
+                  'https://pbs.twimg.com/media/ECZzynSWwAA9M5m.jpg',
+                  width: 30.0,
+                  height: 30.0,
+                  fit: BoxFit.cover,
+                )),
+              ),
+            ],
+          ),
         ],
       ),
     );
