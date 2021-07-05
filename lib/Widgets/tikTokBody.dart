@@ -14,6 +14,7 @@ class UITikTok extends StatelessWidget {
         Column(
           children: [
             _topNav(),
+            _interactionButtons(),
           ],
         ),
       ],
@@ -61,10 +62,45 @@ class UITikTok extends StatelessWidget {
           style: TextStyle(
               fontSize: 18.0, color: color, fontWeight: FontWeight.bold),
         ),
-        SizedBox(
-          height: 8.0,
-        ),
+        SizedBox(height: 8.0)
       ],
+    );
+  }
+
+  Widget _interactionButtons() {
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(
+                  color: Colors.white,
+                )),
+            child: ClipOval(
+              child: Image.network(
+                'https://pbs.twimg.com/media/ECZzynSWwAA9M5m.jpg',
+                width: 50.0,
+                height: 50.0,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          SizedBox(height: 25.0),
+          Image.asset("icons/corazon.png"),
+          SizedBox(height: 5.0),
+          Text("168.2k", style: TextStyle(fontSize: 10.0, color: Colors.white)),
+          SizedBox(height: 20.0),
+          Image.asset("icons/comentarios.png"),
+          SizedBox(height: 5.0),
+          Text("134", style: TextStyle(fontSize: 10.0, color: Colors.white)),
+          SizedBox(height: 20.0),
+          Image.asset("icons/compartir.png"),
+          SizedBox(height: 5.0),
+          Text("14", style: TextStyle(fontSize: 10.0, color: Colors.white)),
+        ],
+      ),
     );
   }
 }
